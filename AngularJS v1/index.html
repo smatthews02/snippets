@@ -8,42 +8,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="controller.js"></script>
     <script src="directive.js"></script>
+    <script src="service.js"></script>
 </head>
 <body>
 <div ng-app="App" ng-controller="Controller">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <li><a href="/#/" class="posts">Posts</a></li>
-                <li><a href="/#/register" class="register">Register</a></li>
-                <li><a href="/#/login" class='login'>Login</a></li>
-            </ul>
-            <ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
-                <li><a class='logout' href="#" ng-click='logout()'>Logout</a></li>
-            </ul>
-            <p ng-if="currentUser" class="navbar-text navbar-right">Signed in as {{currentUser.username}}</p>
-        </div>
-    </nav>
-    <div class="container">
-        <form ng-focus>
-            <div class="form-group">
-                <label class="control-label">Select</label>
-                <select id="select" class="form-control select" ng-model="select" ng-change="updateSelect()">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Text</label>
-                <input type="text" class="form-control" ng-model="text">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Textarea</label>
-                <textarea class="form-control"></textarea>
-            </div>
-            <button id="next" class="btn btn-primary next" ng-click="buttonClick()">Next</button>
-        </form>
+    <form>
+        <label>Text</label>
+        <input type="text" ng-model="text">
+        <button ng-click="buttonClick()">Next</button>
+    </form>
+    <directive data-info="passed data"></directive>
+    <div ng-if="text">ngIf = true</div>
+    <div ng-switch="expression">
+        <div ng-switch-when="matchValue1">...</div>
+        <div ng-switch-when="matchValue2">...</div>
+        <div ng-switch-default>Switch Default</div>
+    </div>
+    <div class="post" ng-repeat="user in users">
+        <h1>{{user.name}}</h1>
+        <p>{{user.username}}</p>
+        <p>{{user.email}}</p>
     </div>
 </div>
 </body>

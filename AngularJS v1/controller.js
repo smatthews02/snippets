@@ -1,27 +1,28 @@
 angular.module('App', [])
-    .controller('Controller', function ($scope, $location, $log) {
-
-        //setup local dev environment
-        //$scope.debugMode = ($location.host() === 'localhost');
-        //var log = $log.getInstance('init');
-        //log.debug('angular running');
-
-        $scope.selectfocus = true;
-
+    .controller('Controller', function ($scope, $http, service) {
         $scope.text = 'This is a test of ngModel';
-        $scope.currentUser = {
-            username: 'Scott'
-        };
 
         $scope.buttonClick = function () {
-            log.debug('next button clicked');
+            console.log('next button clicked');
         };
 
-        $scope.updateSelect = function () {
-            log.debug('new select value:', $scope.select);
-        };
+        service.setURL('designsbysm.com');
+        console.log('app controller:', service.getURL());
 
-        $scope.loseFocus = function () {
-            log.debug('lost focus');
-        };
+        $http({
+            method: 'GET',
+            url: 'https://jsonplaceholder.typicode.com/users/'
+        }).then(function (response) {
+            //see if we have data
+            if (response.status === 200) {
+                $scope.users = response.data;
+            }
+
+        }).catch(function (response) {
+            //have an error
+            console.log(response);
+
+        }).finally(function () {
+
+        });
     });
