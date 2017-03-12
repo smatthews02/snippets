@@ -1,0 +1,28 @@
+/* -------------------- Bootstrap -------------------- */
+@media all and (min-width: 1px) {
+
+}
+
+/* -------------------- Extra Small Devices, Phones -------------------- */
+@media only screen and (min-width: 480px) {
+
+}
+
+/* -------------------- Small Devices, Tablets -------------------- */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* -------------------- Medium Devices, Desktops -------------------- */
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* -------------------- Large Devices, Wide Screen -------------------- */
+@media only screen and (min-width: 1200px) {
+
+}
