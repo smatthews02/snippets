@@ -1,0 +1,13 @@
+//Don't Track
+git update-index --assume-unchanged C:/git/softwrench/softWrench.sW4.Web/Web.config
+
+//Track
+git update-index --no-assume-unchanged C:/git/softwrench/softWrench.sW4.Web/Web.config
+
+//list all remote branches that have been merged into develop (not longer needed)
+git branch -r --merged | grep origin | grep -v '>' | grep -v develop | xargs -L1 | awk '{sub(/origin\//,"");print}'
+
+//My remote path
+ssh://scott@designsbysm.me/var/git/__repo__.git
+
+origin:ssh://designsbysm.com/var/git/<repo>.git

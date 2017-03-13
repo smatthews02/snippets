@@ -1,0 +1,5 @@
+//Show hidden folders in Mac dialog
+Command-Shift-Period
+
+//DNS flush
+sudo killall -HUP mDNSResponder

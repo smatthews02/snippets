@@ -1,0 +1,3 @@
+//unable to sync Sketch artboards to InVision
+defaults delete com.bohemiancoding.sketch3.plist com.invisionlabs.Sync.refreshToken
+defaults delete com.bohemiancoding.sketch3.plist com.invisionlabs.Sync.accessToken

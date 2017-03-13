@@ -1,0 +1,18 @@
+//make sure optional string has value
+if let _ = folderPath where !folderPath!.isEmpty {
+    //not empty
+}
+
+//make sure optional string has value
+if !(folderPath ?? "").isEmpty {
+    //not empty
+}
+
+//return default value for empty optional string
+((string ?? "").isEmpty ? "Default" : string!)
+
+//debug
+assert(__test__, "__message__")
+
+//nil coal
+(__optional__ ?? __default__)
